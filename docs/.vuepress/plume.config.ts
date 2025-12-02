@@ -27,13 +27,18 @@ export default defineThemeConfig({
   ],
   navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
   aside: true, // 页内侧边栏， 默认显示在右侧
-  outline: [2, 3], // 页内大纲， 默认显示 h2, h3
+  outline: [2, 6], // 页内大纲， 默认显示 h2, h3
 
   /**
    * 文章版权信息
    * @see https://theme-plume.vuejs.press/guide/features/copyright/
    */
   // copyright: true,
+  copyright:{
+    license: "CC-BY-NC-ND-4.0",
+    author: {name:  "only9464",url:  "https://github.com/only9464"},
+    creation: "original",
+  },
 
   prevPage: true,   // 是否启用上一页链接
   nextPage: true,   // 是否启用下一页链接
@@ -50,7 +55,7 @@ export default defineThemeConfig({
   transition: {
     page: true,        // 启用 页面间跳转过渡动画
     postList: true,    // 启用 博客文章列表过渡动画
-    appearance: 'fade',  // 启用 深色模式切换过渡动画, 或配置过渡动画类型
+    appearance: 'blinds-vertical',  // 启用 深色模式切换过渡动画, 或配置过渡动画类型
   },
 
   locales: {

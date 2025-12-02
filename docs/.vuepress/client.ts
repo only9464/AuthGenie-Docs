@@ -1,5 +1,6 @@
 import { defineClientConfig } from 'vuepress/client'
 import { Layout } from 'vuepress-theme-plume/client'
+import PageContextMenu from 'vuepress-theme-plume/features/PageContextMenu.vue'
 import { h } from 'vue'
 
 // import RepoCard from 'vuepress-theme-plume/features/RepoCard.vue'
@@ -25,6 +26,7 @@ export default defineClientConfig({
   layouts: {
     Layout: h(Layout, null, {
       'aside-outline-after': () => h(AsideNav),
+      'doc-title-after': () => h(PageContextMenu),
     }),
   },
 })

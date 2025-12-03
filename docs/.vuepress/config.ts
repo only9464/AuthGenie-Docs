@@ -158,6 +158,7 @@ export default defineUserConfig({
      * @see https://theme-plume.vuejs.press/config/markdown/
      */
     markdown: {
+      fileTree: {icon: 'colored'},
       abbr: true,         // 启用 abbr 语法  *[label]: content
       annotation: true,   // 启用 annotation 语法  [+label]: content
       pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
@@ -168,7 +169,12 @@ export default defineUserConfig({
       // artPlayer: true,    // 启用嵌入 artPlayer 本地视频 语法 @[artPlayer](url)
       audioReader: true,  // 启用嵌入音频朗读功能 语法 @[audioReader](url)
       icon: { provider: 'iconify' },        // 启用内置图标语法  ::icon-name::
-      table: true,        // 启用表格增强容器语法 ::: table
+      table: {
+        align: 'center',
+        maxContent: false,
+        fullWidth: false,
+        copy: 'all',
+      },        // 启用表格增强容器语法 ::: table
       codepen: true,      // 启用嵌入 codepen 语法 @[codepen](user/slash)
       replit: true,       // 启用嵌入 replit 语法 @[replit](user/repl-name)
       codeSandbox: true,  // 启用嵌入 codeSandbox 语法 @[codeSandbox](id)

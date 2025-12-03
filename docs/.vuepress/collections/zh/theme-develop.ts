@@ -13,9 +13,9 @@ export const themeDevelop: ThemeCollectionItem = defineCollection({
       icon: 'streamline-ultimate-color:monitor-bug',
       items: [
         '',
+        'installenv',
         'getcode',
         'codefiletree',
-        'installenv',
         'dev',
       ],
     },

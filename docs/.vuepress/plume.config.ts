@@ -11,7 +11,7 @@
  */
 
 import { defineThemeConfig } from 'vuepress-theme-plume'
-import { enCollections, zhCollections } from './collections'
+import { enCollections, zhCollections } from './collections/index.ts'
 import { enNavbar, zhNavbar } from './navbar'
 
 /**

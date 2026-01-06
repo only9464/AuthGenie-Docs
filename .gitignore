@@ -1,0 +1,10 @@
+**/node_modules
+
+docs/.vuepress/.cache
+docs/.vuepress/.temp
+docs/.vuepress/dist
+
+package-lock.json
+
+.DS_Store
+*.log

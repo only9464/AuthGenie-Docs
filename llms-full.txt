@@ -1,0 +1,717 @@
+---
+url: /blog/mnfzkey3/index.md
+---
+# 自定义组件
+
+---
+
+---
+url: /blog/tkvga9m6/index.md
+---
+## 标题H2
+
+### 标题H3
+
+#### 标题H4
+
+##### 标题H5
+
+###### 标题H6
+
+## 标题2 Badge&#x20;
+
+### 标题3 Badge&#x20;
+
+#### 标题4 Badge&#x20;
+
+正文内容。
+
+`@property` CSS at-rule是 [CSS Houdini API](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Houdini)
+的一部分，它允许开发者显式地定义他们的 [CSS 自定义属性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*),
+允许进行属性类型检查、设定默认值以及定义该自定义属性是否可以被继承。
+
+`@property` 的出现，极大的增强了 CSS 的能力。
+
+加粗：**加粗文字**
+
+斜体： *斜体文字*
+
+\~~删除文字~~
+
+内容 ==标记==
+
+数学表达式： $-(2^{n-1})$ ~ $2^{n-1} -1$
+
+$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
+\= \left(\frac {y^{\omega}} {\omega}\right) \left{(\log y)^r + \sum\_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right}$
+
+19^th^
+
+H~2~O
+
+::: center
+内容居中
+:::
+
+::: right
+内容右对齐
+:::
+
+* 无序列表1
+* 无序列表2
+* 无序列表3
+
+1. 有序列表1
+2. 有序列表2
+3. 有序列表3
+
+* \[ ] 任务列表1
+* \[ ] 任务列表2
+* \[x] 任务列表3
+* \[x] 任务列表4
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+> 引用内容
+>
+> 引用内容
+
+[链接](/)
+
+[外部链接](https://github.com/pengzhanbo)
+
+![plume](/plume.svg)
+
+**Badge：**
+
+**图标：**
+
+* home -&#x20;
+* vscode -&#x20;
+* twitter -&#x20;
+
+**demo wrapper：**
+
+::: demo-wrapper title="示例" no-padding height="200px"
+
+:::
+
+**代码：**
+
+```js whitespace
+const a = 1
+const b = 2
+const c = a + b
+
+// [!code word:obj]
+const obj = {
+  toLong: {
+    deep: {
+      deep: {
+        deep: {
+          value: 'this is to long text. this is to long text. this is to long text. this is to long text.', // [!code highlight]
+        }
+      }
+    }
+  }
+}
+```
+
+**Code Blocks TwoSlash：**
+
+```ts twoslash
+// @errors: 2339
+const welcome = 'Tudo bem gente?'
+const words = welcome.contains(' ')
+```
+
+```ts twoslash
+import express from 'express'
+const app = express()
+app.get('/', (req, res) => {
+  res.send
+})
+app.listen(3000)
+```
+
+```ts twoslash
+import { createHighlighter } from 'shiki'
+
+const highlighter = await createHighlighter({ themes: ['nord'], langs: ['javascript'] })
+// @log: Custom log message
+const a = 1
+// @error: Custom error message
+const b = 1
+// @warn: Custom warning message
+const c = 1
+// @annotate: Custom annotation message
+```
+
+```ts twoslash
+// @errors: 2540
+interface Todo {
+  title: string
+}
+
+const todo: Readonly<Todo> = {
+  title: 'Delete inactive users'.toUpperCase(),
+//  ^?
+}
+
+todo.title = 'Hello'
+
+Number.parseInt('123', 10)
+//      ^|
+
+//
+//
+```
+
+```vue twoslash
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const count = ref(0)
+</script>
+
+<template>
+  <p>{{ count }}</p>
+</template>
+```
+
+**代码分组：**
+
+::: code-tabs
+@tab tab1
+
+```js
+const a = 1
+const b = 2
+const c = a + b
+```
+
+@tab tab2
+
+```ts
+const a: number = 1
+const b: number = 2
+const c: number = a + b
+```
+
+:::
+
+**代码块高亮：**
+
+```ts
+function foo() {
+  const a = 1 // [!code highlight]
+
+  console.log(a)
+
+  const b = 2 // [!code ++]
+  const c = 3 // [!code --]
+
+  console.log(a + b + c) // [!code error]
+  console.log(a + b) // [!code warning]
+}
+```
+
+**代码块聚焦：**
+
+```ts
+function foo() {
+  const a = 1 // [!code focus]
+}
+```
+
+::: tip 仅标题
+:::
+
+::: note 注释
+注释内容 [link](https://github.com/pengzhanbo) `inline code`
+
+```js
+const a = 1
+const b = 2
+const c = a + b
+```
+
+:::
+
+::: info 信息
+信息内容 [link](https://github.com/pengzhanbo) `inline code`
+
+```js
+const a = 1
+const b = 2
+const c = a + b
+```
+
+:::
+
+::: tip 提示
+提示内容 [link](https://github.com/pengzhanbo) `inline code`
+
+```js
+const a = 1
+const b = 2
+const c = a + b
+```
+
+:::
+
+::: warning 警告
+警告内容 [link](https://github.com/pengzhanbo) `inline code`
+
+```js
+const a = 1
+const b = 2
+const c = a + b
+```
+
+:::
+
+::: caution 错误
+错误内容 [link](https://github.com/pengzhanbo) `inline code`
+
+```js
+const a = 1
+const b = 2
+const c = a + b
+```
+
+:::
+
+::: important 重要
+重要内容 [link](https://github.com/pengzhanbo) `inline code`
+
+```js
+const a = 1
+const b = 2
+const c = a + b
+```
+
+:::
+
+::: details 详细标题
+
+这里是内容。
+:::
+
+**GFM alert：**
+
+> \[!note]
+> note
+
+> \[!info]
+> info
+
+> \[!tip]
+> tip
+
+> \[!warning]
+> warning
+
+> \[!caution]
+> caution
+
+> \[!important]
+> important
+
+**代码演示：**
+
+:::: demo title="常规示例" desc="一个常规示例"
+
+::: code-tabs
+@tab HTML
+
+```html
+<div id="app">
+  <h3>vuepress-theme-plume</h3>
+</div>
+```
+
+@tab Javascript
+
+```js
+const a = 'So Awesome!'
+const app = document.querySelector('#app')
+app.appendChild(window.document.createElement('small')).textContent = a
+```
+
+@tab CSS
+
+```css
+#app {
+  font-size: 2em;
+  text-align: center;
+}
+```
+
+:::
+::::
+
+**选项卡：**
+
+::: tabs
+@tab 标题1
+内容区块
+
+@tab 标题2
+内容区块
+:::
+
+:::: warning
+::: tabs
+@tab 标题1
+内容区块
+
+@tab 标题2
+内容区块
+:::
+::::
+
+**脚注：**
+
+脚注 1 链接\[^first]。
+
+脚注 2 链接[^second]。
+
+行内的脚注^\[行内脚注文本] 定义。
+
+重复的页脚定义[^second]。
+
+\[^first]: 脚注 **可以包含特殊标记**
+
+```
+也可以由多个段落组成
+```
+
+[^second]: 脚注文字。
+
+---
+
+---
+url: /demo/index.md
+---
+# Demo
+* [bar](./bar.md)
+* [foo](./foo.md)
+
+---
+
+---
+url: /demo/0qv9o9ph/index.md
+---
+# foo
+[bar](./bar.md)
+
+---
+
+---
+url: /demo/b3re7du2/index.md
+---
+# bar
+[foo](./foo.md)
+
+---
+
+---
+url: /develop/index.md
+---
+# 介绍
+## 项目简介
+
+该项目是一个基于==Cloudflare Worker==开发的一套==面向多平台软件的全域授权管理与数据分析SaaS平台=={.info}
+
+---
+
+---
+url: /develop/backend/index.md
+---
+# 介绍
+## 简介
+
+后端的代码全都是运行在==cloudflare worker==环境下的，近似于浏览器环境
+
+::: table full-width
+
+| Cloudflare存储 | 特性           | 类似于        |
+| -------------- | -------------- | ------------- |
+| D1             | 关系型数据库   | MySQL、SQLite |
+| KV             | 键值对数据库   | Redis         |
+| R2             | 对象存储数据库 | Minio         |
+
+:::
+
+## 环境变量
+
+这里的环境变量可以在==wrangler.jsonc==中进行定义，在执行==wrangler deploy==的时候，会自动将==wrangler.jsonc==中的变量值上传至该项目对应的worker中去。
+
+## 完整的配置文件
+
+后端绑定的数据库和环境变量都要在自己的==wrangler.jsonc==中进行赋值
+
+::: code-tabs
+
+@tab wrangler.jsonc
+
+```json
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "authgenie",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-12-03"
+  // "compatibility_flags": [
+  //   "nodejs_compat"
+  // ],
+  // "vars": {
+  //   "MY_VAR": "my-variable"
+  // },
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "MY_KV_NAMESPACE",
+  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  //   }
+  // ],
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MY_BUCKET",
+  //     "bucket_name": "my-bucket"
+  //   }
+  // ],
+  // "d1_databases": [
+  //   {
+  //     "binding": "MY_DB",
+  //     "database_name": "my-database",
+  //     "database_id": ""
+  //   }
+  // ],
+  // "ai": {
+  //   "binding": "AI"
+  // },
+  // "observability": {
+  //   "enabled": true,
+  //   "head_sampling_rate": 1
+  // }
+}
+```
+
+:::
+
+---
+
+---
+url: /develop/backend/database/index.md
+---
+# 数据库
+## 一、D1数据库
+
+### 系统管理员表（admin）
+
+::: table full-width align="center" hl-rows="tip:1" hl-cols="success:1"
+
+| 字段名        | 类型    | 主键 | 说明                     |
+|---------------|---------|------|--------------------------|
+| id            | TEXT    | 是   | 雪花 ID / UUID           |
+| username      | TEXT    | 否   | 管理员账号               |
+| email         | TEXT    | 否   | 登录邮箱                 |
+| password\_hash | TEXT    | 否   | 哈希密码                 |
+| canBeUsed     | INTEGER | 否   | 0 禁用 / 1 启用          |
+| updateTime    | TEXT    | 否   | 更新时间（ISO）          |
+| createTime    | TEXT    | 否   | 创建时间（ISO）          |
+
+:::
+
+### 操作审计日志（audit\_log）
+
+::: table full-width align="center" hl-rows="tip:1" hl-cols="success:1"
+| 字段名     | 类型    | 主键 | 说明                            |
+|------------|---------|------|---------------------------------|
+| id         | TEXT    | 是   | ID                              |
+| actor\_type | TEXT    | 否   | admin / user                    |
+| actor\_id   | TEXT    | 否   | 操作者 ID                       |
+| action     | TEXT    | 否   | login / create\_project ...      |
+| detail     | TEXT    | 否   | 扩展 JSON                       |
+| ip         | TEXT    | 否   | 操作 IP                         |
+| createTime | TEXT    | 否   | 时间戳                          |
+
+### 用户表（user）
+
+::: table full-width align="center" hl-rows="tip:1" hl-cols="success:1"
+| 字段名     | 类型    | 主键 | 说明                           |
+|------------|---------|------|--------------------------------|
+| id         | TEXT    | 是   | 用户 ID（UUID）                |
+| username   | TEXT    | 否   | 用户名（GitHub login）         |
+| email      | TEXT    | 否   | GitHub 邮箱（可能为空）        |
+| avatar     | TEXT    | 否   | GitHub 头像 URL                |
+| github\_id  | TEXT    | 否   | GitHub User ID                 |
+| canBeUsed  | INTEGER | 否   | 1 可用 / 0 禁用                |
+| updateTime | TEXT    | 否   | 更新时间（ISO）                |
+| createTime | TEXT    | 否   | 创建时间（ISO）                |
+
+:::
+
+### 团队表（team）
+
+::: table full-width align="center" hl-rows="tip:1" hl-cols="success:1"
+| 字段名     | 类型 | 主键 | 说明             |
+|------------|------|------|------------------|
+| id         | TEXT | 是   | 团队 ID          |
+| name       | TEXT | 否   | 团队名称         |
+| owner\_id   | TEXT | 否   | 创建者 user.id   |
+| createTime | TEXT | 否   | 创建时间         |
+| updateTime | TEXT | 否   | 更新时间         |
+
+:::
+
+### 团队成员表（team\_member）
+
+::: table full-width align="center" hl-rows="tip:1" hl-cols="success:1"
+| 字段名     | 类型 | 主键 | 说明                           |
+|------------|------|------|--------------------------------|
+| id         | TEXT | 是   | ID                             |
+| team\_id    | TEXT | 否   | 团队 ID                        |
+| user\_id    | TEXT | 否   | 用户 ID                        |
+| role       | TEXT | 否   | owner / admin / member         |
+| createTime | TEXT | 否   | 加入时间                       |
+
+:::
+
+### 项目表（project）
+
+::: table full-width align="center" hl-rows="tip:1" hl-cols="success:1"
+| 字段名      | 类型 | 主键 | 说明         |
+|-------------|------|------|--------------|
+| id          | TEXT | 是   | 项目 ID      |
+| team\_id     | TEXT | 否   | 所属团队 ID  |
+| name        | TEXT | 否   | 项目名称     |
+| description | TEXT | 否   | 项目简介     |
+| createTime  | TEXT | 否   | 创建时间     |
+| updateTime  | TEXT | 否   | 更新时间     |
+
+:::
+
+### License 表（license）
+
+::: table full-width align="center" hl-rows="tip:1" hl-cols="success:1"
+| 字段名         | 类型    | 主键 | 说明                           |
+|----------------|---------|------|--------------------------------|
+| id             | TEXT    | 是   | License ID                     |
+| project\_id     | TEXT    | 否   | 所属项目                       |
+| key            | TEXT    | 否   | 授权密钥（哈希/加密存储）     |
+| type           | TEXT    | 否   | trial / paid / internal / life |
+| max\_activation | INTEGER | 否   | 最大激活次数                   |
+| expireAt       | TEXT    | 否   | 到期时间                       |
+| meta\_json      | TEXT    | 否   | JSON 扩展数据                  |
+| createTime     | TEXT    | 否   | 创建时间                       |
+| updateTime     | TEXT    | 否   | 更新时间                       |
+
+:::
+
+## 二、KV数据库
+
+### SessionID
+
+Key: `session:{session_id}`\
+Value(JSON):
+
+| 字段        | 说明                     |
+|-------------|--------------------------|
+| user\_id     | 用户 ID                  |
+| ip          | 登录 IP                  |
+| ua          | User-Agent               |
+| expireAt    | 过期时间（ISO）         |
+| createTime  | 创建时间                 |
+
+---
+
+---
+url: /develop/codefiletree/index.md
+---
+# 项目文件结构
+::: file-tree
+
+* .wrangler
+  * ...
+* node\_modules
+  * ...
+* src  所有**后端**核心代码都在这里
+  * index.ts  代码入口
+* .gitignore
+* package-lock.json
+* package.json
+* README.md
+* tsconfig.json
+* wrangler.jsonc
+* ...
+  :::
+
+---
+
+---
+url: /develop/dev/index.md
+---
+# 开始调试
+## 调试后端
+
+进入项目根目录(==wrangler.jsonc==所在的目录)，执行：
+
+```bash
+wrangler dev
+```
+
+---
+
+---
+url: /develop/getcode/index.md
+---
+# 获取代码
+## 拉取后端代码
+
+```bash
+git clone https://github.com/only9464/AuthGenie-Docs.git
+```
+
+---
+
+---
+url: /develop/installenv/index.md
+---
+# 安装环境和依赖
+## 一、安装Git
+
+Git官方：<https://github.com/git>
+
+## 二、安装nvm
+
+Windows：<https://github.com/coreybutler/nvm-windows>
+
+安装完成后，使用nvm初始化一个node环境：
+
+```bash
+nvm i 22
+nvm use 22
+```
+
+## 三、安装Wrangler
+
+::: npm-to
+
+```bash
+npm i wrangler@latest -g
+```
+
+:::
+
+---
+
+---
+url: /faq/index.md
+---
+# 常见问题
+本文主要包含了使用该项目的过程中可能会遇到的常见问题与解决方法。

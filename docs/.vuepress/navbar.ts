@@ -14,7 +14,7 @@ export const zhNavbar = defineNavbarConfig([
   { text: '博客', link: '/blog/' ,icon:'carbon:blog'},
   { text: '标签', link: '/blog/tags/' ,icon:'gis:tags'},
   { text: '归档', link: '/blog/archives/' ,icon:'streamline-freehand:archive-drawer-1'},
-  { text: '笔记',link: '/demo/' ,icon:'streamline-freehand:notes-quill'},
+  { text: '其他文档',link: '/doc/' ,icon:'streamline-freehand:notes-quill'},
   {
     text: '更多',
     icon: 'icon-park-outline:more-three',

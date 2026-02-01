@@ -1,11 +1,11 @@
 import { defineCollections, type ThemeCollections } from 'vuepress-theme-plume'
-import { themeDevelop } from './theme-develop'
-import { themeGuide } from './theme-guide'
+import { developDoc } from './developDoc'
+// import { otherDoc } from './otherDoc'
 
 export const zhCollections: ThemeCollections = defineCollections([
   // 博客
   { type: 'post', dir: '/blog/', link: '/blog/', title: '博客' },
   // 文档
-  themeGuide,
-  themeDevelop,
+  developDoc,
+  { type: 'doc',title:'文档',dir: 'doc',linkPrefix: '/doc/',sidebar: ['', 'requirements','technologyResearch','outlineDesign']},
 ])

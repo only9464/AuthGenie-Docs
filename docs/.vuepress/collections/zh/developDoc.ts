@@ -1,7 +1,7 @@
 import type { ThemeCollectionItem } from 'vuepress-theme-plume'
 import { defineCollection } from 'vuepress-theme-plume'
 
-export const themeDevelop: ThemeCollectionItem = defineCollection({
+export const developDoc: ThemeCollectionItem = defineCollection({
   type: 'doc',
   title: '开发文档',
   dir: 'develop',

@@ -1,9 +1,9 @@
 import type { ThemeCollectionItem } from 'vuepress-theme-plume'
 import { defineCollection } from 'vuepress-theme-plume'
 
-export const themeGuide: ThemeCollectionItem = defineCollection({
+export const otherDoc: ThemeCollectionItem = defineCollection({
   type: 'doc',
-  dir: 'guide',
+  dir: 'doc',
   title: '指南',
   linkPrefix: '/guide/',
   sidebar: [

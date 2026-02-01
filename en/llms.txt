@@ -1,0 +1,22 @@
+# AuthGenie
+
+A SaaS platform for global authorization management and data analysis for multi platform software
+
+## Table of Contents
+
+### Blog
+
+- [Markdown](/en/blog/0gasdykk/index.md)
+- [Custom Component](/en/blog/ek0hprij/index.md)
+
+### Guide
+
+
+### Config
+
+
+### Others
+
+- [Demo](/en/demo/index.md)
+- [foo](/en/demo/ftzzt1a5/index.md)
+- [bar](/en/demo/gdg4yz4x/index.md)

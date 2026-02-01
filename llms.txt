@@ -1,0 +1,42 @@
+# 灵域
+
+面向多平台软件的全域授权管理与数据分析SaaS平台
+
+
+
+## Alternate Language Versions
+
+- [en-US](/en/llms.md)
+
+
+
+## Table of Contents
+
+### 博客
+
+- [自定义组件](/blog/mnfzkey3/index.md)
+- [Markdown](/blog/tkvga9m6/index.md)
+
+### 开发文档
+
+- [介绍](/develop/index.md)
+- [安装环境和依赖](/develop/installenv/index.md)
+- [获取代码](/develop/getcode/index.md)
+- [项目文件结构](/develop/codefiletree/index.md)
+- [开始调试](/develop/dev/index.md)
+- [介绍](/develop/backend/index.md)
+- [数据库](/develop/backend/database/index.md)
+
+### 文档
+
+- [其他文档](/doc/index.md)
+- [需求分析说明书](/doc/requirements/index.md)
+- [关键技术研究报告](/doc/technologyResearch/index.md)
+- [概要设计说明书](/doc/outlineDesign/index.md)
+
+### Others
+
+- [Demo](/demo/index.md)
+- [foo](/demo/0qv9o9ph/index.md)
+- [bar](/demo/b3re7du2/index.md)
+- [常见问题](/faq/index.md)

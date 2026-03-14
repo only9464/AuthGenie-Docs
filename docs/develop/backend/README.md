@@ -6,11 +6,11 @@ permalink: /develop/backend/
 ---
 ## 简介
 
-后端的代码全都是运行在==cloudflare worker==环境下的，近似于浏览器环境
+后端的代码全都是运行在==Cloudflare Worker==环境下的，近似于浏览器环境
 
 ::: table full-width
 
-| Cloudflare存储 | 特性           | 类似于        |
+| Cloudflare 存储 | 特性           | 类似于        |
 | -------------- | -------------- | ------------- |
 | D1             | 关系型数据库   | MySQL、SQLite |
 | KV             | 键值对数据库   | Redis         |
@@ -21,7 +21,7 @@ permalink: /develop/backend/
 
 ## 环境变量
 
-这里的环境变量可以在==wrangler.jsonc==中进行定义，在执行==wrangler deploy==的时候，会自动将==wrangler.jsonc==中的变量值上传至该项目对应的worker中去。
+这里的环境变量可以在==wrangler.jsonc==中进行定义，在执行==wrangler deploy==的时候，会自动将==wrangler.jsonc==中的变量值上传至该项目对应的 worker 中去。
 
 
 ## 完整的配置文件
@@ -36,40 +36,57 @@ permalink: /develop/backend/
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "authgenie",
   "main": "src/index.ts",
-  "compatibility_date": "2025-12-03"
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
-  // "vars": {
-  //   "MY_VAR": "my-variable"
-  // },
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "MY_KV_NAMESPACE",
-  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  //   }
-  // ],
-  // "r2_buckets": [
-  //   {
-  //     "binding": "MY_BUCKET",
-  //     "bucket_name": "my-bucket"
-  //   }
-  // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
-  // "ai": {
-  //   "binding": "AI"
-  // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+  "compatibility_date": "2025-12-03",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "authgenie-db",
+      "database_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "USER_SESSION_KV",
+      "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    }
+  ],
+  "vars": {
+    "JWT_SECRET": "your-secret-key"
+  }
 }
 ```
 
 :::
+
+## 项目结构
+
+```
+src/
+├── index.ts           # 入口文件，路由分发
+├── db/
+│   └── schema.ts      # 数据库表结构定义
+├── user/              # 普通用户 API 模块
+│   ├── index.ts       # 用户路由
+│   ├── api/           # API 实现
+│   └── middleware/    # 中间件
+├── admin/             # 管理员 API 模块
+│   ├── index.ts       # 管理员路由
+│   ├── api/
+│   └── middleware/
+├── sadmin/            # 超级管理员 API 模块
+│   ├── index.ts       # 超级管理员路由
+│   ├── api/
+│   └── middleware/
+└── vertify/           # 许可证校验 API 模块
+    ├── index.ts       # 校验路由
+    └── {platform}/    # 各平台处理器
+```
+
+## API 路由总览
+
+| 模块 | 基础路径 | 说明 |
+|------|---------|------|
+| user | /api/user | 普通用户接口（注册、登录、团队、项目、许可证） |
+| admin | /api/admin | 管理员接口（用户管理、团队管理、项目管理、日志） |
+| sadmin | /api/sadmin | 超级管理员接口（管理员管理、日志） |
+| vertify | /api/vertify | 许可证校验接口（多平台支持） |

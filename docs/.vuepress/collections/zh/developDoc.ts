@@ -15,8 +15,6 @@ export const developDoc: ThemeCollectionItem = defineCollection({
         '',
         'installenv',
         'getcode',
-        'codefiletree',
-        'dev',
       ],
     },
     {
@@ -27,12 +25,11 @@ export const developDoc: ThemeCollectionItem = defineCollection({
       items: [
         '',
         'database',
-        'globalvariable',
         {
           text: '系统超级管理员',
           icon: 'grommet-icons:user-admin',
           collapsed: true,
-          prefix: 'spueradmin',
+          prefix: 'sadmin',
           // items: ['','测试', 'collection-doc'],
           items: 'auto',
         },
@@ -45,22 +42,6 @@ export const developDoc: ThemeCollectionItem = defineCollection({
           // items: ['','collection-post', 'collection-doc'],
         },
         {
-          text: '团队管理员',
-          icon: 'grommet-icons:user-admin',
-          collapsed: true,
-          prefix: 'teamadmin',
-          items: 'auto',
-          // items: ['','collection-post', 'collection-doc'],
-        }, 
-        {
-          text: '团队成员',
-          icon: 'grommet-icons:user-admin',
-          collapsed: true,
-          prefix: 'teammember',
-          items: 'auto',
-          // items: ['','collection-post', 'collection-doc'],
-        },
-        {
           text: '普通用户',
           icon: 'grommet-icons:user-admin',
           collapsed: true,
@@ -68,7 +49,7 @@ export const developDoc: ThemeCollectionItem = defineCollection({
           items: 'auto',
           // items: ['','collection-post', 'collection-doc'],
         },
-        'globalmiddleware',
+        'vertify',
       ],
     },
     {

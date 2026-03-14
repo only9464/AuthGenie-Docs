@@ -1,0 +1,67 @@
+---
+url: /develop/backend/user/login/index.md
+---
+## 接口说明
+
+用户通过用户名和密码进行登录，登录成功后返回用户信息和会话有效期。系统会将会话 ID 存储在 KV 中，并设置 HttpOnly Cookie。
+
+**会话有效期：** 7 天（604800 秒）
+
+## 请求
+
+**URL:** `/api/user/login`
+
+**方法:** `POST`
+
+**Content-Type:** `application/json`
+
+## 请求头
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| Content-Type | string | 是 | 必须为 application/json |
+
+## 请求参数
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| username | string | 是 | 用户名，2-20 字符 |
+| password | string | 是 | 密码，6-32 字符 |
+
+## 响应参数
+
+| 参数名 | 类型 | 说明 |
+|--------|------|------|
+| userId | number | 用户 ID |
+| username | string | 用户名 |
+| expiresIn | number | 会话有效期（秒） |
+
+## 响应示例
+
+```json
+{
+  "userId": 1001,
+  "username": "admin",
+  "expiresIn": 604800
+}
+```
+
+## 错误码
+
+| 状态码 | 错误码 | 说明 |
+|--------|--------|------|
+| 200 | SUCCESS | 登录成功 |
+| 400 | INVALID\_PARAMETERS | 参数无效 |
+| 401 | INVALID\_CREDENTIALS | 账号或密码错误 |
+| 403 | ACCOUNT\_DISABLED | 账号已禁用 |
+| 500 | DATABASE\_ERROR | 数据库未配置 |
+
+## 实现细节
+
+1. 验证用户名和密码是否为空
+2. 查询数据库验证用户是否存在
+3. 检查用户状态是否为 active
+4. 验证密码是否匹配（当前版本为明文比对）
+5. 生成 sessionId 并存储到 KV
+6. 设置 HttpOnly Cookie
+7. 更新用户最后登录时间

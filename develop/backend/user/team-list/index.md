@@ -1,0 +1,53 @@
+---
+url: /develop/backend/user/team-list/index.md
+---
+## 接口说明
+
+获取当前用户创建或加入的所有团队列表。
+
+## 请求
+
+**URL:** `/api/user/team/list`
+
+**方法:** `GET`
+
+## 请求头
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| Cookie | string | 是 | session\_id，HttpOnly Cookie |
+
+## 响应参数
+
+| 参数名 | 类型 | 说明 |
+|--------|------|------|
+| teams | array | 团队列表 |
+| teams\[].id | number | 团队 ID |
+| teams\[].name | string | 团队名称 |
+| teams\[].ownerUserId | number | 所有者用户 ID |
+| teams\[].status | string | 团队状态 |
+| teams\[].role | string | 当前用户在团队中的角色 |
+
+## 响应示例
+
+```json
+{
+  "teams": [
+    {
+      "id": 1,
+      "name": "My Team",
+      "ownerUserId": 1001,
+      "status": "active",
+      "role": "owner"
+    }
+  ]
+}
+```
+
+## 错误码
+
+| 状态码 | 错误码 | 说明 |
+|--------|--------|------|
+| 200 | SUCCESS | 查询成功 |
+| 401 | UNAUTHORIZED | 未授权 |
+| 500 | DATABASE\_ERROR | 数据库错误 |

@@ -1,0 +1,71 @@
+# 灵域
+
+面向多平台软件的全域授权管理与数据分析SaaS平台
+
+
+
+## Alternate Language Versions
+
+- [en-US](/en/llms.md)
+
+
+
+## Table of Contents
+
+### 博客
+
+- [自定义组件](/blog/mnfzkey3/index.md)
+- [Markdown](/blog/tkvga9m6/index.md)
+
+### 开发文档
+
+- [介绍](/develop/index.md)
+- [安装环境和依赖](/develop/installenv/index.md)
+- [获取源码](/develop/getcode/index.md)
+- [介绍](/develop/backend/index.md)
+- [数据库](/develop/backend/database/index.md)
+- [添加管理员](/develop/backend/sadmin/admin-add/index.md)
+- [删除管理员](/develop/backend/sadmin/admin-delete/index.md)
+- [禁用管理员](/develop/backend/sadmin/admin-disable/index.md)
+- [启用管理员](/develop/backend/sadmin/admin-enable/index.md)
+- [管理员列表](/develop/backend/sadmin/admin-list/index.md)
+- [管理员登录日志](/develop/backend/sadmin/admin-log/index.md)
+- [超级管理员登录](/develop/backend/sadmin/login/index.md)
+- [管理员登录](/develop/backend/admin/login/index.md)
+- [项目列表](/develop/backend/admin/project-list/index.md)
+- [团队列表](/develop/backend/admin/team-list/index.md)
+- [禁用用户](/develop/backend/admin/user-disable/index.md)
+- [启用用户](/develop/backend/admin/user-enable/index.md)
+- [用户列表](/develop/backend/admin/user-list/index.md)
+- [用户操作日志](/develop/backend/admin/user-log/index.md)
+- [批量生成许可证](/develop/backend/user/license-batch/index.md)
+- [许可证详情](/develop/backend/user/license-detail/index.md)
+- [许可证列表](/develop/backend/user/license-list/index.md)
+- [用户登录](/develop/backend/user/login/index.md)
+- [用户登出](/develop/backend/user/logout/index.md)
+- [创建项目](/develop/backend/user/project-create/index.md)
+- [删除项目](/develop/backend/user/project-delete/index.md)
+- [项目列表](/develop/backend/user/project-list/index.md)
+- [项目统计](/develop/backend/user/project-stats/index.md)
+- [用户注册](/develop/backend/user/register/index.md)
+- [创建团队](/develop/backend/user/team-create/index.md)
+- [删除团队](/develop/backend/user/team-delete/index.md)
+- [加入团队](/develop/backend/user/team-join/index.md)
+- [团队列表](/develop/backend/user/team-list/index.md)
+- [团队成员列表](/develop/backend/user/team-members/index.md)
+- [许可证校验](/develop/backend/vertify/index.md)
+- [前端开发指南](/develop/frontend/index.md)
+
+### 文档
+
+- [其他文档](/doc/index.md)
+- [需求分析说明书](/doc/requirements/index.md)
+- [关键技术研究报告](/doc/technologyResearch/index.md)
+- [概要设计说明书](/doc/outlineDesign/index.md)
+
+### Others
+
+- [Demo](/demo/index.md)
+- [foo](/demo/0qv9o9ph/index.md)
+- [bar](/demo/b3re7du2/index.md)
+- [常见问题](/faq/index.md)

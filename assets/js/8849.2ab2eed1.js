@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkauth_genie=self.webpackChunkauth_genie||[]).push([[8849],{8849(e,c,t){t.d(c,{createArchitectureServices:()=>u.b});var u=t(7480);t(3060),t(9218),t(6259),t(8517),t(8840)}}]);

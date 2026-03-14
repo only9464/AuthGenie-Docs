@@ -1,0 +1,80 @@
+---
+url: /develop/backend/admin/user-log/index.md
+---
+## 接口说明
+
+管理员查询用户操作日志。
+
+## 请求
+
+**URL:** `/api/admin/user/log`
+
+**方法:** `GET`
+
+## 请求头
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| Cookie | string | 是 | session\_id，HttpOnly Cookie |
+
+## 请求参数
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| page | number | 否 | 页码，默认 1 |
+| limit | number | 否 | 每页数量，默认 20 |
+| actionType | string | 否 | 操作类型筛选 |
+| success | number | 否 | 筛选：1 成功/0 失败 |
+
+## 响应参数
+
+| 参数名 | 类型 | 说明 |
+|--------|------|------|
+| logs | array | 日志列表 |
+| logs\[].id | number | 日志 ID |
+| logs\[].userId | number | 用户 ID |
+| logs\[].action | string | 操作描述 |
+| logs\[].actionType | string | 操作类型 |
+| logs\[].targetType | string | 目标类型 |
+| logs\[].targetId | number | 目标 ID |
+| logs\[].success | number | 成功：1/失败：0 |
+| logs\[].errorMessage | string | 错误信息 |
+| logs\[].ip | string | IP 地址 |
+| logs\[].userAgent | string | 用户代理 |
+| logs\[].createdAt | number | 创建时间戳 |
+| total | number | 总数 |
+| page | number | 当前页码 |
+| limit | number | 每页数量 |
+
+## 响应示例
+
+```json
+{
+  "logs": [
+    {
+      "id": 1,
+      "userId": 1001,
+      "action": "team.create",
+      "actionType": "create",
+      "targetType": "team",
+      "targetId": 1,
+      "success": 1,
+      "ip": "192.168.1.1",
+      "userAgent": "Mozilla/5.0...",
+      "createdAt": 1773478150000
+    }
+  ],
+  "total": 500,
+  "page": 1,
+  "limit": 20
+}
+```
+
+## 错误码
+
+| 状态码 | 错误码 | 说明 |
+|--------|--------|------|
+| 200 | SUCCESS | 查询成功 |
+| 401 | UNAUTHORIZED | 未授权 |
+| 403 | FORBIDDEN | 无权限 |
+| 500 | DATABASE\_ERROR | 数据库错误 |

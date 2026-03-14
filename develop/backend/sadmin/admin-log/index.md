@@ -1,0 +1,74 @@
+---
+url: /develop/backend/sadmin/admin-log/index.md
+---
+## 接口说明
+
+超级管理员查询管理员登录日志。
+
+## 请求
+
+**URL:** `/api/sadmin/admin/log`
+
+**方法:** `GET`
+
+## 请求头
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| Cookie | string | 是 | session\_id，HttpOnly Cookie |
+
+## 请求参数
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| page | number | 否 | 页码，默认 1 |
+| limit | number | 否 | 每页数量，默认 20 |
+| success | number | 否 | 筛选：1 成功/0 失败 |
+
+## 响应参数
+
+| 参数名 | 类型 | 说明 |
+|--------|------|------|
+| logs | array | 日志列表 |
+| logs\[].id | number | 日志 ID |
+| logs\[].actorType | string | 角色类型 |
+| logs\[].actorId | number | 角色 ID |
+| logs\[].actorUsername | string | 角色用户名 |
+| logs\[].success | number | 成功：1/失败：0 |
+| logs\[].ip | string | IP 地址 |
+| logs\[].userAgent | string | 用户代理 |
+| logs\[].createdAt | number | 创建时间戳 |
+| total | number | 总数 |
+| page | number | 当前页码 |
+| limit | number | 每页数量 |
+
+## 响应示例
+
+```json
+{
+  "logs": [
+    {
+      "id": 1,
+      "actorType": "sadmin",
+      "actorId": 1,
+      "actorUsername": "root",
+      "success": 1,
+      "ip": "192.168.1.1",
+      "userAgent": "Mozilla/5.0...",
+      "createdAt": 1773478150000
+    }
+  ],
+  "total": 100,
+  "page": 1,
+  "limit": 20
+}
+```
+
+## 错误码
+
+| 状态码 | 错误码 | 说明 |
+|--------|--------|------|
+| 200 | SUCCESS | 查询成功 |
+| 401 | UNAUTHORIZED | 未授权 |
+| 403 | FORBIDDEN | 无权限 |
+| 500 | DATABASE\_ERROR | 数据库错误 |
